@@ -1,21 +1,23 @@
 void setup() {
   size(680, 500);  //feel free to change the size
+  background(0,0,80);
  noLoop();//stops the draw() function from repeating
 }
 void draw() {
-  for(int y=0; y<500;y=y+25){
-  for(int x=0; x<500; x=x+25){
-scale(x,y);
-scale(x+1,y-1);
+  for(int y=0; y<800;y=y+50){
+  for(int x=0; x<800; x=x+50){
+scale(x-1,y-1);
+scale(x+1,y+1);
 
   }
   }
 }
 void scale(int x, int y) {
-noFill();
+fill(255,255,102);
   translate(width*.001, height*.0001);
   rotate(frameCount / 200.0);
-  star(x+20, y+20, 50,70,10);  
+  star(x, y, 5,7,10); 
+  star(x-40, y-40, 20,30,10);
 
 
 }
@@ -39,4 +41,3 @@ void star(float x, float y, float radius1, float radius2, int npoints) {
   }
   endShape(CLOSE);
 }
-
